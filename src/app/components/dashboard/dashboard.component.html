@@ -1,0 +1,35 @@
+<div class="mainDiv">
+    <div class="tableDiv" *ngIf="!showDiv">
+        <div class="header">
+            <h4><u>Pizza Ordered List</u></h4>
+        </div>
+        <div class="orderInner">
+            <div class="orderHeader">
+                <div class="row">
+                    <div class="col-md-3 nameDiv">Customer Name</div>
+                    <div class="col-md-2">No. of Item</div>
+                    <div class="col-md-2">Total Amount</div>
+                    <div class="col-md-2">Status</div>
+                    <div class="col-md-2">Action</div>
+                </div>
+            </div>
+            <div class="orderDiv" *ngFor="let order of orderList;let i=index;">
+                <div class="row">
+                    <div class="col-md-3 nameDiv">{{order.customer_name}}</div>
+                    <div class="col-md-2">{{order.No_of_item}}</div>
+                    <div class="col-md-2 rupeeDiv">
+                        <img class="rupeeImg" src="./assets/images/rupee-sign-solid.svg" alt="No img" /> {{order.No_of_item * order.price | number: '.2'}}
+                    </div>
+                    <div class="col-md-2">
+                        <img class="orderStatus" src="./assets/images/{{order.status}}.svg" alt="No img" title="{{order.title}}" (click)="_changeOrderStatus(i)" />
+                    </div>
+                    <div class="col-md-2">
+                        <i class="fa fa-eye pr-4 editPencil" (click)="_viewOrder(i)"></i>
+                        <img class="orderStatus" src="./assets/images/action.svg" alt="No img" title="Order action" (click)="_changeOrderStatus(i)" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

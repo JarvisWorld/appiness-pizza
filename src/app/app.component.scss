@@ -1,0 +1,19 @@
+.homeContainer {
+    background-color: whitesmoke;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: auto;
+}
+
+.body-page {
+    // background-color: rgb(168, 167, 167);
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 5px;
+    padding: 2%;
+}
